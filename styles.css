@@ -29,11 +29,11 @@ iframe {
   flex-grow: 2;
 }
 
-.error {
+.not-found {
   color: red;
   display: none;
 }
 
-.error.activate {
+.not-found.activate {
   display: inline !important;
 }

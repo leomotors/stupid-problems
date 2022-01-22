@@ -1,4 +1,10 @@
-const questions = ["aplusb", "calculus_wtf", "cancel_1112", "nikkori_cafe"];
+const questions = [
+  "aplusb",
+  "calculus_wtf",
+  "cancel_1112",
+  "nikkori_cafe",
+  "wtf",
+];
 
 const iframe = document.querySelector("iframe");
 const qToken = window.location.search.split("=");
@@ -6,7 +12,7 @@ const question = window.location.search.split("=")[1];
 
 if (qToken.length >= 2) {
   if (questions.indexOf(question) === -1) {
-    document.querySelector(".error").className += " activate";
+    document.querySelector(".not-found").className += " activate";
   } else {
     iframe.src = `./${question}.pdf`;
   }
