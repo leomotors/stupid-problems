@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="My Stupid Problems Collection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stupid Problems</title>
+  </head>
+  <body>
+    <aside>
+      <h1>Stupid Problems</h1>
+      <h2 class="error">Requested Problems does not exist!</h2>
+      <ul class="problems-list"></ul>
+    </aside>
+    <iframe src="./aplusb.pdf" frameborder="0"></iframe>
+  </body>
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    iframe {
+      height: 960px;
+      max-height: 100%;
+      width: 960px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .error {
+      color: red;
+      display: none;
+    }
+
+    .error.activate {
+      display: inline !important;
+    }
+  </style>
+  <script type="text/javascript">
+    const questions = ["aplusb", "calculus_wtf", "cancel_1112", "nikkori_cafe"];
+
+    const iframe = document.querySelector("iframe");
+    const question = window.location.search.split("=")[1];
+    console.log(question);
+
+    if (questions.indexOf(question) === -1) {
+      document.querySelector(".error").className += " activate";
+    } else {
+      iframe.src = `./${question}.pdf`;
+    }
+
+    const ul = document.querySelector(".problems-list");
+
+    questions.forEach((question) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="./index.html?q=${question}">${question}</a>`;
+      ul.appendChild(li);
+    });
+  </script>
+</html>
