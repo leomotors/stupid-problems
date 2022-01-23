@@ -15,18 +15,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+/* Left Side */
 aside {
   padding: 4em;
   flex-grow: 1;
-}
-
-iframe {
-  height: 960px;
-  max-height: 100%;
-  width: 960px;
-  max-width: 100%;
-  margin: 0 auto;
-  flex-grow: 2;
 }
 
 .not-found {
@@ -35,5 +27,43 @@ iframe {
 }
 
 .not-found.activate {
+  display: inline !important;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: lightcoral;
+}
+
+/* Right Side */
+.pdf-viewer {
+  height: 960px;
+  max-height: 100%;
+  width: 960px;
+  max-width: 100%;
+  flex-grow: 2;
+}
+
+.pdf-viewer > iframe {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.pdf-viewer > p {
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pdf-viewer.loaded > p {
+  display: none;
+}
+
+.pdf-viewer.loaded > iframe {
   display: inline !important;
 }

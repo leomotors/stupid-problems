@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Left Side -->
     <aside>
-      <h1>Stupid Problems Collection</h1>
+      <h1>🤯 Stupid Problems Collection</h1>
       <h2 class="not-found">Requested Problems does not exist!</h2>
+
+      <h3>Available Problems 📜</h3>
       <ul class="problems-list"></ul>
 
       <p>
@@ -36,8 +39,13 @@
         ✨
       </p>
     </aside>
-    <iframe src="./aplusb.pdf" frameborder="0"></iframe>
-  </body>
 
-  <script src="script.js"></script>
+    <!-- Right Side -->
+    <div class="pdf-viewer">
+      <p>Loading...</p>
+      <iframe frameborder="0"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
