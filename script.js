@@ -19,7 +19,7 @@ if (qToken.length >= 2) {
 }
 
 // * Default
-iframe.src = iframe.src || "./src/aplusb.pdf";
+iframe.src ||= "./src/aplusb.pdf";
 
 document.querySelector(".pdf-viewer").className += " loaded";
 
