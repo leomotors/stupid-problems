@@ -1,0 +1,124 @@
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage[includeheadfoot, a4paper, total={6.5in, 9.8in}, top=0.5cm]{geometry} 
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx}
+% \usepackage{inconsolata}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{fancyvrb}
+\usepackage{verbatim}
+\usepackage{longfbox}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{xcolor,colortbl}
+
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\setstretch{0.1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Head of document when smth important happens
+\lhead{
+\begin{minipage}{\textwidth}
+\begin{flushright}
+\small{\textbf{Problem by Leomotors}}
+\end{flushright}
+\end{minipage}
+}
+
+\rfoot{\lfbox[
+  padding-top=6pt,
+  padding-left=12pt,
+  padding-right=12pt,
+  border-width=0pt,
+  border-top-width=1pt,
+]{\thepage}}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\setlength{\headheight}{60pt}
+
+\setstretch{1.2}
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\XeTeXlinebreakskip = 0pt plus 0.75pt minus 0.5pt
+
+\newenvironment{problem}[5]
+    {
+    {\huge \textbf{#1}} 
+
+    {\large #4, #5} \\ }
+    {}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue
+}
+
+\newlength{\thelinewidth}
+\thelinewidth=\textwidth
+\newlength{\exmpwidinf}
+\newlength{\exmpwidouf}
+\newlength{\exmpwidewid}
+\exmpwidinf=0.43\thelinewidth
+\exmpwidouf=0.43\thelinewidth
+\exmpwidewid=0.9\thelinewidth
+
+% This is magic, which delete space after verbatiminput
+\addto@hook{\every@verbatim}{\topsep=0pt\relax}
+
+\newenvironment{example}[1][]{
+
+    \ttfamily\obeylines\obeyspaces\frenchspacing
+    \newcommand{\exmp}[2]{
+        \ifdefined\NoExamples\else%
+        \begin{minipage}[t]{\exmpwidinf}\rightskip=0pt plus 1fill\relax##1\medskip\end{minipage}&
+        \begin{minipage}[t]{\exmpwidouf}\rightskip=0pt plus 1fill\relax##2\medskip\end{minipage}\\
+        \hline
+        \fi%
+    }
+
+    \newcommand{\exmpfile}[2]{
+       \ifdefined\NoExamples\else%
+       \exmp{
+          \verbatiminput{##1}
+       }{
+          \verbatiminput{##2}
+       }%
+       \fi%
+    }
+
+    \ifdefined\NoExamples\else%
+    \begin{tabular}{|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{\bf\InputFileName}&
+        \multicolumn{1}{  c|}{\bf\OutputFileName}\\
+        \hline
+    \fi%
+}{
+    \ifdefined\NoExamples\else%
+    \end{tabular}
+    \fi%
+}
+
+\newenvironment{simplechar}{%
+   \catcode`\$=12
+   \catcode`\&=12
+   \catcode`\#=12
+   \catcode`\^=12
+   \catcode`\_=12
+   \catcode`\~=12
+   \catcode`\%=12
+}{}

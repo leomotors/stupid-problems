@@ -1,0 +1,9 @@
+*.aux
+*.fdb*
+*.fls
+*log
+*.gz
+*.xdv
+*.out
+
+node_modules

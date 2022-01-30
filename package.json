@@ -1,0 +1,19 @@
+{
+  "name": "stupid-problems",
+  "version": "1.0.0",
+  "description": "Problem Statements of Problems I wrote",
+  "main": "index.js",
+  "repository": "https://github.com/Leomotors/stupid-problems",
+  "author": "Leomotors",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node --es-module-specifier-resolution=node build.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.17"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}

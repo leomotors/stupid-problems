@@ -12,14 +12,14 @@ const question = qToken[1];
 
 if (qToken.length >= 2) {
   if (questions[question]) {
-    iframe.src = `./src/${question}.pdf`;
+    iframe.src = `./pdf/${question}.pdf`;
   } else {
     document.querySelector(".not-found").className += " activate";
   }
 }
 
 // * Default
-iframe.src ||= "./src/aplusb.pdf";
+iframe.src ||= "./pdf/aplusb.pdf";
 
 document.querySelector(".pdf-viewer").className += " loaded";
 

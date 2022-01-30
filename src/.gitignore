@@ -1,0 +1,10 @@
+# Ignore everythings
+*
+
+# But folders
+!*/
+
+# And files with extension
+!*.*
+
+# Hope this work well

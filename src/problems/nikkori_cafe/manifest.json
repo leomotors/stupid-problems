@@ -1,0 +1,19 @@
+{
+    "title": "จอมเวทแห่งคาเฟ่รอยยิ้ม (เวอร์ชั่นง่าย)",
+    "timelimit": 2,
+    "memorylimit": 128,
+    "description": "にっこりカフェの魔法使い",
+    "subtasks": {
+        "1": 10,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10,
+        "6": 10,
+        "7": 10,
+        "8": 10,
+        "9": 10,
+        "10": 10
+    },
+    "statement": "https://leomotors.github.io/stupid-problems/index.html?q=nikkori_cafe"
+}
