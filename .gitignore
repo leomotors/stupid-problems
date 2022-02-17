@@ -1,3 +1,4 @@
+# LaTeX
 *.aux
 *.fdb*
 *.fls
@@ -7,3 +8,11 @@
 *.out
 
 node_modules
+
+.buildinfo
+
+# Test Case
+*.in
+*.out
+*.sol
+problems
