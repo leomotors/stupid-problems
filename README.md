@@ -23,3 +23,7 @@ Problem Statements of Problems I wrote
 ```
 yarn build <target>
 ```
+
+## Credits
+
+LaTeX template and aquagenlib.h by Senior at IPST Camp.
