@@ -1,0 +1,13 @@
+# Ignore everythings, especially executable
+*
+
+# But folders
+!*/
+
+# And files with extension
+!*.*
+
+# Python
+__pycache__
+
+# Hope this work well

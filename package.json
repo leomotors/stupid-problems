@@ -1,0 +1,23 @@
+{
+  "name": "stupid-problems",
+  "version": "2.0.0",
+  "description": "Problem Statements of Problems I wrote",
+  "main": "index.js",
+  "repository": "https://github.com/Leomotors/stupid-problems",
+  "author": "Leomotors",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node --es-module-specifier-resolution=node dist-scripts/build.js",
+    "problem": "python3 src/testcase.py",
+    "install-problem": "src/install.sh ../cocoa-grader",
+    "clean": "rm -rf dist-web dist-scripts problems .buildinfo_* src/**/*/__pycache__ src/**/*/gen src/**/*/sol"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}
