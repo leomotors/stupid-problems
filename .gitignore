@@ -10,9 +10,12 @@
 node_modules
 
 .buildinfo
+.metainfo
 
 # Test Case
 *.in
 *.out
 *.sol
 problems
+
+dist-scripts

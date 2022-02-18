@@ -2,44 +2,24 @@
 
 import chalk from "chalk";
 
-import { exec as execCb } from "child_process";
-import { promisify } from "util";
+import { exec, ARGV, getStatements } from "./shared";
+
 import fs from "fs/promises";
 
-const exec = promisify(execCb);
-
-const buildTargets = {
-  statements,
-  web,
-};
-
-const ARGV = process.argv.slice(3).join(" ");
-
-buildTargets[process.argv[2]]?.();
-
-// * END OF MAIN, BELOW ARE FUNCTIONS
-
-/**
- * @param {string} fname
- * @returns {string}
- */
-function getCommand(fname) {
+function getCommand(fname: string) {
   return `cd statements && xelatex ${fname}.tex && mv ${fname}.pdf ../dist-web/pdf`;
 }
 
-/**
- * @param {string} fname
- * @returns {Promise<string>}
- */
-async function getSha(fname) {
+async function getSha(fname: string) {
   return (await exec(`cd statements && sha256sum ${fname}.tex`)).stdout.split(
     " "
   )[0];
 }
 
-async function statements() {
-  /** @type {{[statement: string]: string}} */
-  let buildinfo = {};
+export default async function statements() {
+  const statements = await getStatements();
+
+  let buildinfo: { [statement: string]: string } = {};
   try {
     if (!ARGV.includes("--new"))
       buildinfo = JSON.parse((await fs.readFile(".buildinfo")).toString());
@@ -48,19 +28,10 @@ async function statements() {
     buildinfo = {};
   }
 
-  /**
-   * @param {string} fname
-   * @returns {string}
-   */
-  const clean = (fname) =>
+  const clean = (fname: string) =>
     `cd statements && ${["aux", "fdb*", "fls", "log", "gz", "xdv", "out"]
       .map((ext) => `rm -f ${fname}.${ext}`)
       .join("&&")}`;
-
-  const statements = (await exec("ls statements")).stdout
-    .split("\n")
-    .filter((fname) => fname.endsWith(".tex"))
-    .map((fname) => fname.split(".tex")[0]);
 
   console.log(`Will compile ${statements.length} statements (${statements})`);
 
@@ -101,8 +72,4 @@ async function statements() {
   }
 
   process.exit(failureExists ? 1 : 0);
-}
-
-async function web() {
-  await exec("cp web/* dist-web");
 }

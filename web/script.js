@@ -1,9 +1,5 @@
 const questions = {
-  aplusb: "A + B [EN]",
-  calculus_wtf: "Calculus WTF [TH]",
-  cancel_1112: "ยกเลิก 1112 [TH]",
-  nikkori_cafe: "จอมเวทแห่งคาเฟ่รอยยิ้ม (เวอร์ชั่นง่าย) [TH]",
-  wtf: "WTF [EN]",
+  /// <Questions />
 };
 
 const iframe = document.querySelector(".pdf-viewer > iframe");
