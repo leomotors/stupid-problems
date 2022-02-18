@@ -8,17 +8,15 @@ Problem Statements of Problems I wrote
 
 This monorepo consists of 3 part
 
+- src - Test Case Generator
+- statements - Statements in TeX
 - web - Web Template (Compiled to `dist-web` and Deploy to GitHub Pages)
 
-- statements - Statements in TeX and build system in TypeScript
+# Scripts
 
-- src - Test Case Generating
+## yarn build \<target\>
 
-## Scripts
-
-```
-yarn build <target>
-```
+Build target, this build system is powered by TypeScript
 
 - statements - Building Statements
 
@@ -26,21 +24,17 @@ yarn build <target>
 
 - gen - Compile test case generator and solution that are written in C++
 
-```
-yarn problem
-```
+## yarn problem
 
 Generate test case and solution with help of Python
 
-```
-yarn install-problem
-```
+## yarn install-problem
 
 Install problem to given location
 
-## Credits
+# Credits
 
-LaTeX template and aquagenlib.h by Senior at IPST Camp.
+LaTeX template and `aquagenlib.h` by Senior at IPST Camp.
 
 ## To develop locally
 
