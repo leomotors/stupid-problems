@@ -1,5 +1,3 @@
-// @ts-check
-
 import { exec, ARGV, getStatements } from "./shared";
 
 import fs from "fs/promises";
@@ -30,6 +28,7 @@ async function getTeXMeta(fname: string) {
 }
 
 export default async function web() {
+  await exec("mkdir -p dist-web");
   await exec("cp web/* dist-web");
 
   const statements = await getStatements();

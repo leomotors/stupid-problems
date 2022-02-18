@@ -9,7 +9,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc && node --es-module-specifier-resolution=node dist-scripts/build.js",
-    "problem": "python3 src/build.py"
+    "problem": "python3 src/testcase.py",
+    "install-problem": "src/install.sh ../cocoa-grader",
+    "clean": "rm -rf dist-web dist-scripts problems .buildinfo_* src/**/*/__pycache__ src/**/*/gen src/**/*/sol"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",

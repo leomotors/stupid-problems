@@ -1,5 +1,3 @@
-// @ts-check
-
 import chalk from "chalk";
 
 import { exec, ARGV, getStatements } from "./shared";
@@ -22,14 +20,16 @@ export default async function statements() {
   let buildinfo: { [statement: string]: string } = {};
   try {
     if (!ARGV.includes("--new"))
-      buildinfo = JSON.parse((await fs.readFile(".buildinfo")).toString());
+      buildinfo = JSON.parse(
+        (await fs.readFile(".buildinfo_statement")).toString()
+      );
     else console.log("--new specified, recompiling all files");
   } catch (err) {
     buildinfo = {};
   }
 
   const clean = (fname: string) =>
-    `cd statements && ${["aux", "fdb*", "fls", "log", "gz", "xdv", "out"]
+    `cd statements && ${["aux", "fdb*", "fls", "log", "gz", "xdv", "out", "pdf"]
       .map((ext) => `rm -f ${fname}.${ext}`)
       .join("&&")}`;
 
@@ -37,6 +37,7 @@ export default async function statements() {
 
   let failureExists = false;
 
+  await exec("mkdir -p dist-web/pdf");
   await exec(clean("*"));
   console.log("Prebuild Cleaned");
   for (const [index, statement] of Object.entries(statements)) {
@@ -63,7 +64,10 @@ export default async function statements() {
     }
   }
 
-  await fs.writeFile(".buildinfo", JSON.stringify(buildinfo, null, 4));
+  await fs.writeFile(
+    ".buildinfo_statement",
+    JSON.stringify(buildinfo, null, 4)
+  );
 
   if (ARGV.includes("--open")) {
     // * This command is not universal, but it works for me!

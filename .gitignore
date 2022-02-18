@@ -9,8 +9,7 @@
 
 node_modules
 
-.buildinfo
-.metainfo
+.buildinfo_*
 
 # Test Case
 *.in

@@ -7,5 +7,6 @@ export async function getStatements() {
   return (await exec("ls statements")).stdout
     .split("\n")
     .filter((fname) => fname.endsWith(".tex"))
+    .filter((fname) => !fname.startsWith("_"))
     .map((fname) => fname.split(".tex")[0]);
 }
