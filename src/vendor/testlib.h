@@ -1,3 +1,4 @@
+// clang-format off
 /* 
  * It is strictly recommended to include "testlib.h" before any other include 
  * in your code. In this case testlib overrides compiler specific "random()".

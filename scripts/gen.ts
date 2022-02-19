@@ -28,15 +28,30 @@ export default async function cpp() {
   let done = 0;
   const total = items.length;
 
-  async function compile(fname: string, skip: boolean) {
+  async function compile(fname: string, skip: boolean, succ?: () => void) {
     if (skip) {
       done++;
       console.log(chalk.cyan(`Skipped ${fname} [${done}/${total}]`));
       return;
     }
 
-    await exec(`src/build.sh ${fname}`);
+    // * Build Interactive
+    let arg = "";
+    const folders = (await exec(`ls src/problems/${fname}`)).stdout.split("\n");
+    if (folders.includes("private")) arg = "private";
+    else if (folders.includes("public")) arg = "public";
+
+    const res = await exec(`src/build.bash ${fname} ${arg}`);
     done++;
+    if (res.stderr) {
+      console.log(
+        chalk.red(`Compiled FAIL or WARN ${fname} [${done}/${total}]`)
+      );
+      console.log(res.stderr);
+      return;
+    }
+
+    succ && succ();
     console.log(chalk.green(`Compiled ${fname} [${done}/${total}]`));
   }
 
@@ -50,8 +65,11 @@ export default async function cpp() {
       continue;
     }
 
-    buildinfo[item] = sha;
-    promises.push(compile(item, false));
+    promises.push(
+      compile(item, false, () => {
+        buildinfo[item] = sha;
+      })
+    );
   }
 
   Promise.all(promises);
