@@ -1,0 +1,37 @@
+{
+    "title": "WTF but it is subtask test",
+    "timelimit": 1,
+    "memorylimit": 64,
+    "description": "what the fuck?",
+    "subtasks": {
+        "1": {
+            "grouped": false,
+            "scores": [
+                2,
+                2,
+                2,
+                2,
+                2
+            ]
+        },
+        "2": {
+            "grouped": true,
+            "scores": [
+                10,
+                10,
+                10,
+                10,
+                10
+            ]
+        },
+        "3": 30,
+        "4": {
+            "grouped": true,
+            "scores": [
+                5,
+                5
+            ]
+        }
+    },
+    "statement": "https://leomotors.github.io/stupid-problems/index.html?q=wtf"
+}

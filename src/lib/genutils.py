@@ -5,12 +5,13 @@ import time
 def getGenerator(name: str, solonly: bool):
     root = f"src/problems/{name}"
 
-    def gen(id, seed, *args):
+    def gen(id, seed="177013", *args):
         args = " ".join(str(a) for a in args)
         print(f"Generating Test Case {id}")
         os.system(f"mkdir -p {root}/testcase")
         if not solonly:
-            os.system(f"{root}/gen {args} {seed} > {root}/testcase/{id}.in")
+            os.system(
+                f"{root}/gen {args} {seed} {id} > {root}/testcase/{id}.in")
         print(f"Running Test Case {id}")
         t = time.time()
         os.system(
