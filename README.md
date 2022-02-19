@@ -12,7 +12,7 @@ This monorepo consists of 3 part
 - statements - Statements in TeX
 - web - Web Template (Compiled to `dist-web` and Deploy to GitHub Pages)
 
-# Scripts
+# ➡️ Scripts
 
 ## yarn build \<target\>
 
@@ -32,9 +32,18 @@ Generate test case and solution with help of Python
 
 Install problem to given location
 
-# Credits
+# 🙇‍♂️ Credits
 
-LaTeX template and `aquagenlib.h` by Senior at IPST Camp.
+`aquagenlib.h` by Senior at IPST Camp, [plumsirawit](https://github.com/plumsirawit) if I don't remember wrong.
+
+LaTeX Template forwarded from my friends, ~~so I don't know where it comes from~~ from
+[programming-in-th/statements](https://github.com/programming-in-th/statements/blob/master/templates/style.sty)
+_Note that LaTex Template in this repositories is modified from original_
+
+## Notes
+
+Testcase generated from here is target directly to be compatible with
+[cocoa-grader](https://github.com/Leomotors/cocoa-grader)
 
 ## To develop locally
 
