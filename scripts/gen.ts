@@ -72,7 +72,8 @@ export default async function cpp() {
     );
   }
 
-  Promise.all(promises);
-
+  await Promise.all(promises);
   await fs.writeFile(".buildinfo_gen", JSON.stringify(buildinfo, null, 4));
+
+  return 0;
 }

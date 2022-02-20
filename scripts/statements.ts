@@ -75,5 +75,5 @@ export default async function statements() {
     await exec(`cd dist-web/pdf && explorer.exe .`).catch((e) => {});
   }
 
-  process.exit(failureExists ? 1 : 0);
+  return failureExists ? 1 : 0;
 }

@@ -47,5 +47,5 @@ export default async function web() {
     script.replace("/// <Questions />", targetString)
   );
 
-  process.exit(0);
+  return 0;
 }

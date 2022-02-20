@@ -8,8 +8,13 @@ const buildTargets = {
   gen,
 };
 
-function main() {
-  buildTargets[process.argv[2] as keyof typeof buildTargets]?.();
+async function main() {
+  const target = process.argv[2];
+  process.exit(
+    target in buildTargets
+      ? await buildTargets[target as keyof typeof buildTargets]()
+      : 1
+  );
 }
 
 main();
