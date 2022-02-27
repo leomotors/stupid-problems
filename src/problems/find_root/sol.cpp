@@ -1,3 +1,5 @@
+// * NOT OPTIMAL SOLUTION (LMAO) Not even the author can get full 100 Score
+
 #include "find_root.hpp"
 #include <cmath>
 #include <functional>
