@@ -3,6 +3,7 @@ const questions = {
   aplusb: "A + B [EN]",
   calculus_wtf: "Calculus WTF [TH]",
   cancel_1112: "ยกเลิก 1112 [TH]",
+  find_root: "Finding the Root [EN]",
   nikkori_cafe: "จอมเวทแห่งคาเฟ่รอยยิ้ม (เวอร์ชั่นง่าย) [TH]",
   power_mod: "Power Mod [EN]",
   wtf: "WTF [EN]",
