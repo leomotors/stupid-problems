@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{res/style_en}
+
+\begin{document}
+
+\begin{problem}{Finding the Root}{standard input}{standard output}{1 seconds}{256 megabytes}
+
+You are given a pure function from $\mathbb{R}\rightarrow\mathbb{R}$
+which in C++ is:
+
+\begin{verbatim}
+double function(double);
+\end{verbatim}
+
+Your goal is to find the root of the function, a.k.a the $x$ where $f(x) = 0$
+
+To simplify things, the function you are dealing with is \textbf{Polynomial Function},
+it may have many roots but all roots are \textbf{Whole Number} and you are only
+required to find one of them.
+
+Implement the following function:
+
+\begin{verbatim}
+int find_root(std::function<double(double)> f);
+\end{verbatim}
+
+This function accepts function $f$ as an argument and should returns $x$
+such that $f(x) = 0$
+
+However, the function $f$ take notes of how many times you called them and
+your score depends on how often you call the function.
+
+\Constraints
+
+\begin{itemize}
+\item All roots lie between $-10^9$ and $10^9$ and degree of Polynomials \textbf{do not exceed} $10$
+\item $\mathcal{O} = 10$
+\item You \textbf{cannot} call the function more than $2*10^9+1$ times (All the possibilities of roots)
+\item Your function will be called \textbf{multiple times}, this will not exceed $100$ times.
+Your score for that test case is the \textbf{average score} of all function calls.
+\end{itemize}
+
+\Scoring
+
+\begin{center}
+
+Let $Q$ be the number of times you have called the function $f$.
+
+\begin{tabular}{ | c | c | }
+\hline
+\textbf{Condition} & \textbf{Ratio of your score to the full score of the test case} \\
+\hline
+Answer is \textbf{Correct} and $Q \le \mathcal{O}$ & $1$ \\
+\hline
+Answer is \textbf{Correct} and $Q > \mathcal{O}$ & $\frac{2*\mathcal{O}}{\mathcal{O}+Q}$ \\
+\hline
+Answer is \textbf{Incorrect} & $0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Rounding will occur at test case level, if required, it will be \textbf{rounded down}.
+
+\textbf{Note}: If the process get killed no matter by time or memory limit exceeded,
+or any runtime error, the score for that test case \textbf{will be $0$} no matter
+how many times have you answered the questions correct. You may need to plan
+\textit{ejection strategy} for your function.
+
+\Subtasks
+
+1. (1 Point) The answer of all tests are $69$
+
+2. (5 Points) The polynomial is linear
+
+3. (9 Points) The polynomial is parabola
+
+4. (17 Points) All roots lie between $-1$ $000$ and $1$ $000$
+
+5. (10 Points) $\mathcal{O} = \infty$
+
+6. (13 Points) $\mathcal{O} \in \{69$ $420, 177$ $013\}$
+
+7. (14 Points) $\mathcal{O} = 1000$
+
+8. (31 Points) No Additional Constraints
+
+\Ex
+
+Definition of polynomial function $f$: \textit{(Note: This does not reflect the real grader code.)}
+
+\begin{verbatim}
+auto f = [](double x){return x*x - 3*x + 2;};
+\end{verbatim}
+
+Then, pass the function as argument to your function.
+
+\begin{verbatim}
+find_root(f);
+\end{verbatim}
+
+Then, in your function, you call
+
+\begin{verbatim}
+f(0); // returns 2
+f(1); // returns 0, is root
+return 1; // correct answer
+\end{verbatim}
+
+Your function should returns $1$ or $2$ which will make $f(x)=0$
+
+\SampleGrader
+
+\textbf{First Line}: $T, F$ represents the number of tests and Full Score of the test case
+
+\textbf{For each test $t_i$} has 2 lines
+
+\begin{itemize}
+\item \textbf{First Line of $t_i$}: $R$, $O$ represents number of roots and $O$
+\item \textbf{Second Line of $t_i$}: $x_1, x_2, \cdots, x_R$ represents roots
+\end{itemize}
+
+\end{problem}
+
+\end{document}

@@ -27,6 +27,7 @@ def build(name: str, user: Callable, solonly: bool):
     os.system(f"mv src/problems/{name}/testcase/* problems/{name}/testcase")
     os.system(f"cp src/problems/{name}/manifest.json problems/{name}")
     os.system(f"rm -rf src/problems/{name}/testcase")
+    os.system(f"cp -r src/problems/{name}/public problems/{name}")
 
 
 if len(sys.argv) > 1:

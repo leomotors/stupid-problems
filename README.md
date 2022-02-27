@@ -47,8 +47,8 @@ Testcase generated from here is target directly to be compatible with
 
 ## To develop locally
 
-- Install TeXLive (not sure which version, if error install earlier version)
+- Install TeXLive (not sure which version, if error install bigger version, _I do texlive-full_)
 
-- To compile statement with Thai Language, font [Sarabun](https://fonts.google.com/specimen/Sarabun?subset=thai) is required
+- To compile statement with Thai Language, font [Sarabun](https://fonts.google.com/specimen/Sarabun?subset=thai) must exists in the system
 
 - nodejs 16+ is recommended
