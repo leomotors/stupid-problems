@@ -16,7 +16,7 @@ double function(double);
 Your goal is to find the root of the function, a.k.a the $x$ where $f(x) = 0$
 
 To simplify things, the function you are dealing with is \textbf{Polynomial Function},
-it may have many roots but all roots are \textbf{Whole Number} and you are only
+it may have many roots but all roots are \textbf{Integer} and you are only
 required to find one of them.
 
 Implement the following function:
@@ -34,9 +34,8 @@ your score depends on how often you call the function.
 \Constraints
 
 \begin{itemize}
-\item All roots lie between $-10^9$ and $10^9$ and degree of Polynomials \textbf{do not exceed} $10$
+\item All roots are in the interval $[-10^9, 10^9]$ and degree of Polynomials \textbf{do not exceed} $10$
 \item $\mathcal{O} = 10$
-\item You \textbf{cannot} call the function more than $2*10^9+1$ times (All the possibilities of roots)
 \item Your function will be called \textbf{multiple times}, this will not exceed $100$ times.
 Your score for that test case is the \textbf{average score} of all function calls.
 \end{itemize}
@@ -75,7 +74,7 @@ how many times have you answered the questions correct. You may need to plan
 
 3. (9 Points) The polynomial is parabola
 
-4. (17 Points) All roots lie between $-1$ $000$ and $1$ $000$
+4. (17 Points) All roots are in the Interval $[-1$ $000, 1$ $000]$
 
 5. (10 Points) $\mathcal{O} = \infty$
 
@@ -119,6 +118,8 @@ Your function should returns $1$ or $2$ which will make $f(x)=0$
 \item \textbf{First Line of $t_i$}: $R$, $O$ represents number of roots and $O$
 \item \textbf{Second Line of $t_i$}: $x_1, x_2, \cdots, x_R$ represents roots
 \end{itemize}
+
+The sample grader will print out the score you recieved.
 
 \end{problem}
 
