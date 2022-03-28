@@ -34,7 +34,7 @@ if len(sys.argv) > 1:
     problems = sys.argv[1:]
     asserter = os.listdir("src/problems")
 else:
-    problems = os.listdir("src/problems")
+    problems = list(filter(lambda x: "." not in x, os.listdir("src/problems")))
     asserter = problems[:]
 
 solonly = False

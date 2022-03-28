@@ -17,6 +17,7 @@ node_modules
 *.sol
 
 problems
-dist-scripts
+dist-*
+statements/_*
 
 .vscode/settings.json

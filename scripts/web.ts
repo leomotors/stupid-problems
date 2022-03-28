@@ -29,6 +29,7 @@ async function getTeXMeta(fname: string) {
 
 export default async function web() {
   await exec("mkdir -p dist-web");
+  await exec("touch dist-web/.nojekyll");
   await exec("cp web/* dist-web");
 
   const statements = await getStatements();

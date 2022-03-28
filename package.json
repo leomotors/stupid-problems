@@ -1,6 +1,6 @@
 {
   "name": "stupid-problems",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Problem Statements of Problems I wrote",
   "main": "index.js",
   "repository": "https://github.com/Leomotors/stupid-problems",
@@ -12,10 +12,12 @@
     "problem": "python3 src/testcase.py",
     "install-problem": "src/install.sh ../cocoa-grader",
     "clean": "rm -rf dist-web dist-scripts problems .buildinfo_* src/**/*/__pycache__ src/**/*/gen src/**/*/sol",
-    "new": "statements/template.bash"
+    "new": "statements/template.bash",
+    "deploy": "gh-pages -d dist-web -t true"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",
+    "gh-pages": "^3.2.3",
     "typescript": "^4.5.5"
   },
   "dependencies": {

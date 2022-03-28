@@ -14,7 +14,7 @@ async function getSha(fname: string) {
 export default async function cpp() {
   const items = (await exec("ls src/problems")).stdout
     .split("\n")
-    .filter((l) => l.length > 0);
+    .filter((l) => l.length > 0 && !l.includes("."));
 
   let buildinfo: { [statement: string]: string } = {};
   try {
