@@ -1,11 +1,13 @@
 import statements from "./statements";
 import web from "./web";
 import gen from "./gen";
+import cross from "./cross";
 
 const buildTargets = {
   statements,
   web,
   gen,
+  cross,
 };
 
 async function main() {

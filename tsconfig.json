@@ -10,7 +10,8 @@
     "rootDirs": ["scripts"],
     "outDir": "./dist-scripts",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "removeComments": true
   },
   "include": ["./scripts/*"]
 }
