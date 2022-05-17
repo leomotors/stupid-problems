@@ -8,8 +8,8 @@ function min(a: number, b: number) {
 }
 
 function diffChecker(expected: string, actual: string) {
-  const etoken = expected.split(/\s+/);
-  const atoken = actual.split(/\s+/);
+  const etoken = expected.split(/\s+/).filter((t) => t.length);
+  const atoken = actual.split(/\s+/).filter((t) => t.length);
 
   for (let i = 0; i < min(etoken.length, atoken.length); i++) {
     if (etoken[i] !== atoken[i]) {
@@ -20,8 +20,8 @@ function diffChecker(expected: string, actual: string) {
           } but received ${atoken[i]}`
         )
       );
+      return false;
     }
-    return false;
   }
 
   if (etoken.length != atoken.length) {
@@ -30,9 +30,10 @@ function diffChecker(expected: string, actual: string) {
         `Check Failed: Expected output to has ${etoken.length} tokens but received ${atoken.length}`
       )
     );
+    return false;
   }
 
-  return false;
+  return true;
 }
 
 export default async function cross() {
@@ -62,7 +63,7 @@ export default async function cross() {
       )
     ).toString();
 
-    if (diffChecker(expected, output)) {
+    if (!diffChecker(expected, output)) {
       console.log(chalk.red(`Check failed at ${input}`));
       return 1;
     }
