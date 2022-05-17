@@ -24,6 +24,8 @@ Build target, this build system is powered by TypeScript
 
 - gen - Compile test case generator and solution that are written in C++
 
+- cross - For cross checking
+
 ## yarn problem
 
 Generate test case and solution with help of Python
@@ -34,7 +36,7 @@ Install problem to given location
 
 # 🙇‍♂️ Credits
 
-`aquagenlib.h` by Senior at IPST Camp, [plumsirawit](https://github.com/plumsirawit) if I don't remember wrong.
+`aquagenlib.h` by Senior at IPST Camp, passed down to juniors.
 
 LaTeX Template forwarded from my friends, ~~so I don't know where it comes from~~ from
 [programming-in-th/statements](https://github.com/programming-in-th/statements/blob/master/templates/style.sty)
