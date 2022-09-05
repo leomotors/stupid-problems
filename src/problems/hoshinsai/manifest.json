@@ -1,0 +1,18 @@
+{
+    "title": "Finding the Root",
+    "timelimit": 1,
+    "memorylimit": 256,
+    "description": "Mafs",
+    "type": "interactive",
+    "subtasks": {
+        "1": 1,
+        "2": 5,
+        "3": 9,
+        "4": 17,
+        "5": 10,
+        "6": 13,
+        "7": 14,
+        "8": 31
+    },
+    "statement": "https://leomotors.github.io/stupid-problems/index.html?q=find_root"
+}

@@ -59,7 +59,13 @@ export default async function cpp() {
 
   const promises = [];
   for (const item of items) {
-    const sha = await getSha(item);
+    const sha = await getSha(item).catch((e) => {
+      console.log(`Will skip ${item} because it throws ${e}`);
+      done++;
+    });
+
+    if (!sha) continue;
+
     if (buildinfo[item] == sha) {
       promises.push(compile(item, true));
       continue;
