@@ -37,22 +37,30 @@ export default async function cpp() {
 
     // * Build Interactive
     let arg = "";
-    const folders = (await exec(`ls src/problems/${fname}`)).stdout.split("\n");
-    if (folders.includes("private")) arg = "private";
-    else if (folders.includes("public")) arg = "public";
 
-    const res = await exec(`src/build.bash ${fname} ${arg}`);
-    done++;
-    if (res.stderr) {
-      console.log(
-        chalk.red(`Compiled FAIL or WARN ${fname} [${done}/${total}]`)
+    try {
+      const folders = (await exec(`ls src/problems/${fname}`)).stdout.split(
+        "\n"
       );
-      console.log(res.stderr);
-      return;
-    }
+      if (folders.includes("private")) arg = "private";
+      else if (folders.includes("public")) arg = "public";
 
-    succ && succ();
-    console.log(chalk.green(`Compiled ${fname} [${done}/${total}]`));
+      const res = await exec(`src/build.bash ${fname} ${arg}`);
+      done++;
+      if (res.stderr) {
+        console.log(
+          chalk.red(`Compiled FAIL or WARN ${fname} [${done}/${total}]`)
+        );
+        console.log(res.stderr);
+        return;
+      }
+
+      succ && succ();
+
+      console.log(chalk.green(`Compiled ${fname} [${done}/${total}]`));
+    } catch (err) {
+      console.log(chalk.red(`Build ${fname} fail with error: ${err}`));
+    }
   }
 
   console.log(`Start building ${total} tasks (${items})`);
