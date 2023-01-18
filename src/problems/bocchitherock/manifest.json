@@ -1,0 +1,62 @@
+{
+  "ID": "tumso19_bocchitherock",
+  "DefaultLimits": {
+    "TimeLimit": 1.0,
+    "MemoryLimit": 256
+  },
+  "Limits": {},
+  "Checker": "lcmp",
+  "Grouper": "min",
+  "Groups": [
+    {
+      "FullScore": 7.0,
+      "TestIndices": {
+        "Start": 1,
+        "End": 4
+      }
+    },
+    {
+      "FullScore": 7.0,
+      "TestIndices": {
+        "Start": 5,
+        "End": 8
+      }
+    },
+    {
+      "FullScore": 31.0,
+      "TestIndices": {
+        "Start": 9,
+        "End": 28
+      }
+    },
+    {
+      "FullScore": 19.0,
+      "TestIndices": {
+        "Start": 29,
+        "End": 35
+      }
+    },
+    {
+      "FullScore": 22.0,
+      "TestIndices": {
+        "Start": 36,
+        "End": 43
+      }
+    },
+    {
+      "FullScore": 11.0,
+      "TestIndices": {
+        "Start": 44,
+        "End": 50
+      }
+    },
+    {
+      "FullScore": 3.0,
+      "TestIndices": {
+        "Start": 51,
+        "End": 56
+      }
+    }
+  ],
+  "CompileFiles": {}
+}

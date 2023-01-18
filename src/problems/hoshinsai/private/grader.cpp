@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <vector>
 
-#include "hoshinsai.h"
+#include "find_root.h"
 
 static std::vector<int> roots;
 static int Q = 0;
