@@ -21,3 +21,7 @@ dist-*
 statements/_*
 
 .vscode/settings.json
+
+# MacOS
+.DS_Store
+__MACOSX

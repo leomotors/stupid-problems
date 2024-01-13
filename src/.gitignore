@@ -11,3 +11,7 @@
 __pycache__
 
 # Hope this work well
+
+# MacOS
+.DS_Store
+__MACOSX
